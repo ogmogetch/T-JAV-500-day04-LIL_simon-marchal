@@ -18,7 +18,7 @@ public class GreatWhite extends Shark{
     public void eat(Animal animal){
         if (canEat(animal)) {
             System.out.println(name + " ate a " + animal.type + " named " + animal.name + ".");
-            frenzy = false;
+            boolean frenzy = false;
         } else {
             System.out.println(name + ": It's not worth my time.");
         }
