@@ -1,7 +1,8 @@
-public class Shark extends Animal{
+public class Shark extends Animal {
     private boolean frenzy = false;
+
     public Shark(String name) {
-        super(name, 0, Type.fish);
+        super(name, 0, Type.FISH);
         System.out.println("A KILLER IS BORN!");
     }
 
@@ -11,22 +12,23 @@ public class Shark extends Animal{
 
     public void status() {
         if (frenzy) {
-            System.out.println(name + " is smelling blood and wants to kill.");
+            System.out.println(getName() + " is smelling blood and wants to kill.");
         } else {
-            System.out.println(name + " is swimming peacefully.");
+            System.out.println(getName() + " is swimming peacefully.");
         }
     }
 
-    public boolean canEat(Animal animal) {
-        return this != animal;
+        public boolean canEat(Animal animal) {
+        if (animal == this) return false;
+        return true;
     }
 
-    public void eat(Animal animal){
+    public void eat(Animal animal) {
         if (canEat(animal)) {
-            System.out.println(name + " ate a " + animal.type + " named " + animal.name + ".");
+            System.out.println(getName() + " ate a " + animal.getType() + " named " + animal.getName() + ".");
             frenzy = false;
         } else {
-            System.out.println(name + ": It's not worth my time.");
+            System.out.println(getName() + ": It's not worth my time.");
         }
     }
 }
