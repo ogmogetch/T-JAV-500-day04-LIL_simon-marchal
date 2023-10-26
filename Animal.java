@@ -22,9 +22,9 @@ Animals never die.
 3
  */
     protected enum Type {
-        MAMMAL,
-        FISH,
-        BIRD
+        mammal,
+        fish,
+        bird
     }
 
     protected String name;
@@ -42,13 +42,13 @@ Animals never die.
         this.type = type;
         numberOfAnimals++;
         switch (type) {
-            case MAMMAL:
+            case mammal:
                 numberOfMammals++;
                 break;
-            case FISH:
+            case fish:
                 numberOfFish++;
                 break;
-            case BIRD:
+            case bird:
                 numberOfBirds++;
                 break;
         }
